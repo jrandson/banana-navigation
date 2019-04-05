@@ -4,4 +4,5 @@ Banana_linux/*
 #ide
 .idea/*
 
-
+*.pyc
+__pycache__/*
