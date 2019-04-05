@@ -1,7 +1,7 @@
-### deep-reiforcement-learning
+### Deep Reiforcement Learning
 
 ![An example of the environment to be solved](banana.gif)
-####The Environment
+#### The Environment
 
 In this project, an agent is trained to navigate (and collect bananas!) in a large, square world.
 
