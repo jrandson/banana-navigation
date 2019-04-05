@@ -9,7 +9,8 @@ import torch
 
 from DQLearning.dqn_agent import Agent
 
-def run_dql(env, dql_agent, state_grid, n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
+
+def run_dql(env, dql_agent, n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
     """Deep Q-Learning.
 
     Params
@@ -65,9 +66,8 @@ def run_dql(env, dql_agent, state_grid, n_episodes=2000, max_t=1000, eps_start=1
     return scores
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
 
-    # please do not modify the line below
     env = UnityEnvironment(file_name="./Banana_Linux/Banana.x86_64")
     brain_name = env.brain_names[0]
     brain = env.brains[brain_name]
@@ -83,13 +83,8 @@ if __name__=="__main__":
 
     agent = Agent(state_size=state_size, action_size=action_size, seed=0)
 
-    # env.seed(0)
-    # print('State shape: ', env.observation_space.shape)
-    # print('Number of actions: ', env.action_space.n)
+    scores = run_dql(env, agent)
 
-    scores = run_dql(env, agent, state_grid)
-
-    # plot the scores
     fig = plt.figure()
     ax = fig.add_subplot(111)
     plt.plot(np.arange(len(scores)), scores)
@@ -97,5 +92,3 @@ if __name__=="__main__":
     plt.xlabel('Episode #')
     plt.savefig('episodexscore.png')
     plt.show()
-
-
