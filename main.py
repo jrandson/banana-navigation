@@ -5,16 +5,9 @@ from utils import create_uniform_grid, run
 from unityagents import UnityEnvironment
 import numpy as np
 import matplotlib.pyplot as plt
+import torch
 
 from DQLearning.dqn_agent import Agent
-
-from utils import discretize
-
-
-def preprocess_state(state, state_grid):
-    """Map a continuous state to its discretized representation."""
-    return discretize(state, state_grid)
-
 
 def run_dql(env, dql_agent, state_grid, n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
     """Deep Q-Learning.

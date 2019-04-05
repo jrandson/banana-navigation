@@ -64,47 +64,6 @@ def dqn(n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.99
     return scores
 
 
-def test_environment(env, agent):
-
-    # watch an untrained agent
-
-    state = env.reset()
-    img = plt.imshow(env.render(mode='rgb_array'))
-    for j in range(200):
-        action = agent.act(state)
-        img.set_data(env.render(mode='rgb_array'))
-        plt.axis('off')
-
-        # display.display(plt.gcf())
-        # display.clear_output(wait=True)
-
-        state, reward, done, _ = env.step(action)
-        if done:
-            break
-
-    env.close()
-
-
-def test_the_smart_agent(agent, env):
-    # load the weights from file
-    agent.qnetwork_local.load_state_dict(torch.load('checkpoint.pth'))
-
-    for i in range(3):
-        state = env.reset()
-        img = plt.imshow(env.render(mode='rgb_array'))
-        for j in range(200):
-            action = agent.act(state)
-            img.set_data(env.render(mode='rgb_array'))
-            plt.axis('off')
-            # display.display(plt.gcf())
-            # display.clear_output(wait=True)
-            state, reward, done, _ = env.step(action)
-            if done:
-                break
-
-    env.close()
-
-
 if __name__ == "__main__":
     # env = gym.make('MountainCar-v0')
     env = gym.make('LunarLander-v2')
