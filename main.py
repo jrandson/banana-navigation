@@ -1,6 +1,5 @@
 from collections import deque
 
-from QLearning.Q_learning import QLearningAgent
 from utils import create_uniform_grid, run
 from unityagents import UnityEnvironment
 import numpy as np
