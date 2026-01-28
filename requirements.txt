@@ -51,7 +51,7 @@ Pillow==5.4.1
 pluggy==0.9.0
 prometheus-client==0.6.0
 prompt-toolkit==2.0.9
-protobuf==3.5.2
+protobuf
 ptyprocess==0.6.0
 py==1.8.0
 pycparser==2.19
@@ -76,7 +76,7 @@ tensorflow==1.7.1
 termcolor==1.1.0
 terminado==0.8.1
 testpath==0.4.2
-torch==1.0.1.post2
+torch
 tornado==6.0.1
 traitlets==4.3.2
 unityagents==0.4.0
